@@ -24,7 +24,7 @@ def clean_upload_folder():
 
 
 def make_directory():
-    os.mkdir(UPLOAD_FOLDER)
+    os.makedirs(UPLOAD_FOLDER,exist_ok=True)
 
 
 @app.route('/')
