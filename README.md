@@ -4,7 +4,7 @@ This repo comprises of training DenseNet from scratch on cifar10 and then using 
 
 The directory is defined as 
 
-![](Screenshot from 2020-04-03 22-17-17.png)
+![](dir_struct.png)
 
 ## For Training
 
