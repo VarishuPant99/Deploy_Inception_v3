@@ -14,16 +14,18 @@ The directory is defined as
 
 ## For Inference
 
- we need Cifar-10 data for inference.
-
-Execute the below to generate 10 random images from cifar-10 test data.
+ we need Cifar-10 data for inference. Execute the below to generate 10 random images from cifar-10 test data.
 
 ```bash
 cd data
 python generate_valid_data.py
 ```
 
+Run [Inference Notebook file](InferenceNotebook.ipynb)
 
+
+
+## Model Serving on Flask.
 
 For Serving this model as a website. First generate  test images by executing above commands and then.
 
