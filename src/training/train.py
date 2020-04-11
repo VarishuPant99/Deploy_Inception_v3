@@ -24,7 +24,7 @@ def train_model(model,
           optimizer=None,
           criterion =None,
           num_epochs=5 ,
-          save_model_filename="saved_weights.pt",
+          save_model_filename="Inceptiov3_batch_51220_3.pth",
           log_filename="training_logs.txt"):
     if optimizer is None:
         optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)

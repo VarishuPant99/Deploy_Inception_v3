@@ -6,10 +6,12 @@ from torchvision import  transforms
 
 
 class Inference:
-    def __init__(self, save_model_filename="saved_weights.pt"):
+    def __init__(self, save_model_filename="Inceptiov3_batch_51220_3.pth"):
         self.classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship','truck']
-        self.model = getModel(training=False,num_classes=len(self.classes))
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.model = getModel(training=False)
+        #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        device = torch.device("cpu")
         self.model.load_state_dict(torch.load(f"./src/saved_weights/{save_model_filename}",map_location=device))
         return None
 
@@ -21,6 +23,6 @@ class Inference:
         image_input = transforms.ToTensor()(image).unsqueeze(0)
         with torch.no_grad():
             out = self.model(image_input).squeeze(0)
-            prob = torch.argmax(out).item()
+            prob = torch.argmax(out).item() 
             return self.classes[prob]
 

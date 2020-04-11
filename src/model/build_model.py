@@ -1,10 +1,12 @@
-from .densenet import DenseNet
+from .inception import inception_v3
 import torch
 
-def getModel(training=False,**kwargs):
+def getModel(training=False):
 
-    device  = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = DenseNet(**kwargs)
+    #device  = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device  = torch.device("cpu")
+    
+    model =inception_v3()
     model.eval()
     if training :
         model.train()
@@ -12,5 +14,6 @@ def getModel(training=False,**kwargs):
         print("The model is in training mode")
     print("No of params in model is " , sum(p.numel() for p in model.parameters() if p.requires_grad))
     model  = model.to(device)
+    print(model)
     print(f"model is loaded on GPU {next(model.parameters()).is_cuda}")
     return model

@@ -13,7 +13,7 @@ class Cifar10Data:
 
         return None
 
-    def dataloader(self,batch_size=64 ,num_workers = 4,device_count=torch.cuda.device_count()):
+    def dataloader(self,batch_size=32 ,num_workers = 4,device_count=torch.cuda.device_count()):
         loader_param = { "batch_size":batch_size*device_count,
                         "pin_memory":True,
                         "num_workers":num_workers,
