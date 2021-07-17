@@ -1,6 +1,6 @@
 # Flask Image Classification
 
-This repo comprises of training DenseNet from scratch on cifar10 and then using Flask for Model serving.
+This repo comprises of training Inceptionv3 from scratch on cifar10 and then using Flask for Model serving.
 
 The directory is defined as 
 
